@@ -1,5 +1,5 @@
 class PlateappearanceSerializer < ActiveModel::Serializer
-  attributes :id, :inning, :batter, :pitcher, :runs, :outs, :def_error, :outcome, :game
+  attributes :id, :inninghalf, :inning, :batter, :pitcher, :runs, :outs, :def_error, :outcome, :game
 
   def game
     object.game.id
