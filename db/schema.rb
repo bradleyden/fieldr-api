@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170825192716) do
+ActiveRecord::Schema.define(version: 20170829185538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,13 +25,28 @@ ActiveRecord::Schema.define(version: 20170825192716) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.date     "date"
-    t.hstore   "home"
-    t.hstore   "away"
-    t.integer  "user_id"
+    t.string   "date",       null: false
+    t.string   "home",       null: false
+    t.string   "away",       null: false
+    t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_games_on_user_id", using: :btree
+  end
+
+  create_table "plateappearances", force: :cascade do |t|
+    t.integer  "inning"
+    t.integer  "batter"
+    t.integer  "pitcher"
+    t.integer  "runs"
+    t.integer  "outs"
+    t.integer  "def_error"
+    t.string   "outcome"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "inninghalf"
+    t.index ["game_id"], name: "index_plateappearances_on_game_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,4 +61,6 @@ ActiveRecord::Schema.define(version: 20170825192716) do
   end
 
   add_foreign_key "examples", "users"
+  add_foreign_key "games", "users"
+  add_foreign_key "plateappearances", "games"
 end

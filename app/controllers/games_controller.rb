@@ -1,9 +1,9 @@
-class GamesController < ApplicationController
+class GamesController < ProtectedController
   before_action :set_game, only: [:show, :update, :destroy]
 
   # GET /games
   def index
-    @games = Game.all
+    @games = current_user.games.all
 
     render json: @games
   end
@@ -15,7 +15,7 @@ class GamesController < ApplicationController
 
   # POST /games
   def create
-    @game = Game.new(game_params)
+    @game = current_user.games.build(game_params)
 
     if @game.save
       render json: @game, status: :created, location: @game
@@ -46,6 +46,7 @@ class GamesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def game_params
-      params.require(:game).permit(:date, :home_team, :away_team)
+      params.require(:game).permit(:date, :home, :away)
     end
+
 end
