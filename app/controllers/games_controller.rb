@@ -1,9 +1,9 @@
-class GamesController < OpenReadController
+class GamesController < ProtectedController
   before_action :set_game, only: [:show, :update, :destroy]
 
   # GET /games
   def index
-    @games = Game.all
+    @games = current_user.games.all
 
     render json: @games
   end
@@ -49,5 +49,4 @@ class GamesController < OpenReadController
       params.require(:game).permit(:date, :home, :away)
     end
 
-  private :set_game, :game_params
 end
