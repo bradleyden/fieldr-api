@@ -46,6 +46,6 @@ class PlateappearancesController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def plateappearance_params
-      params.require(:plateappearance).permit(:inning, :inninghalf, :batter, :pitcher, :runs, :outs, :def_error, :outcome, :game_id)
+      params.require(:plateappearance).permit(:firstbase, :secondbase, :thirdbase, :homebase, :firstbasemandefense, :secondbasemandefense, :thirdbasemandefense, :shortstopdefense, :leftfielddefense, :centerfielddefense, :rightfielddefense, :catcherdefense, :pitcherdefense, :homer, :inning, :inninghalf, :batter, :pitcher, :runs, :outs, :def_error, :outcome, :game_id)
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829185538) do
+ActiveRecord::Schema.define(version: 20170831143202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,14 @@ ActiveRecord::Schema.define(version: 20170829185538) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.string   "date",       null: false
-    t.string   "home",       null: false
-    t.string   "away",       null: false
-    t.integer  "user_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "date",                    null: false
+    t.string   "home",                    null: false
+    t.string   "away",                    null: false
+    t.integer  "user_id",                 null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.text     "hroster",    default: [],              array: true
+    t.text     "aroster",    default: [],              array: true
     t.index ["user_id"], name: "index_games_on_user_id", using: :btree
   end
 
@@ -43,9 +45,23 @@ ActiveRecord::Schema.define(version: 20170829185538) do
     t.integer  "def_error"
     t.string   "outcome"
     t.integer  "game_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.string   "inninghalf"
+    t.boolean  "firstbase"
+    t.boolean  "secondbase"
+    t.boolean  "thirdbase"
+    t.boolean  "homebase"
+    t.boolean  "firstbasemandefense"
+    t.boolean  "secondbasemandefense"
+    t.boolean  "thirdbasemandefense"
+    t.boolean  "shortstopdefense"
+    t.boolean  "leftfielddefense"
+    t.boolean  "centerfielddefense"
+    t.boolean  "rightfielddefense"
+    t.boolean  "catcherdefense"
+    t.boolean  "pitcherdefense"
+    t.boolean  "homer"
     t.index ["game_id"], name: "index_plateappearances_on_game_id", using: :btree
   end
 
