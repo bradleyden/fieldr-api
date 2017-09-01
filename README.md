@@ -56,5 +56,4 @@ Once I had the data planned out and mapped, I began to build out my API for the 
 ## Installation Instructions
 
 - Fork and clone this repository
-- npm install
-- bower install
+- bundle install
