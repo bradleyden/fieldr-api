@@ -1,0 +1,47 @@
+class AddGameDataColumns < ActiveRecord::Migration[5.0]
+  def change
+    add_column :games, :away_runs, :integer
+    add_column :games, :away_hits, :integer
+    add_column :games, :away_errors, :integer
+    add_column :games, :home_runs, :integer
+    add_column :games, :home_hits, :integer
+    add_column :games, :home_errors, :integer
+    add_column :games, :total_innings, :integer
+    add_column :games, :top_one, :integer
+    add_column :games, :top_two, :integer
+    add_column :games, :top_three, :integer
+    add_column :games, :top_four, :integer
+    add_column :games, :top_five, :integer
+    add_column :games, :top_six, :integer
+    add_column :games, :top_seven, :integer
+    add_column :games, :top_eight, :integer
+    add_column :games, :top_nine, :integer
+    add_column :games, :top_ten, :integer
+    add_column :games, :top_eleven, :integer
+    add_column :games, :top_twelve, :integer
+    add_column :games, :top_thirteen, :integer
+    add_column :games, :top_fourteen, :integer
+    add_column :games, :top_fifteen, :integer
+    add_column :games, :top_sixteen, :integer
+    add_column :games, :top_seventeen, :integer
+    add_column :games, :top_eighteen, :integer
+    add_column :games, :bot_one, :integer
+    add_column :games, :bot_two, :integer
+    add_column :games, :bot_three, :integer
+    add_column :games, :bot_four, :integer
+    add_column :games, :bot_five, :integer
+    add_column :games, :bot_six, :integer
+    add_column :games, :bot_seven, :integer
+    add_column :games, :bot_eight, :integer
+    add_column :games, :bot_nine, :integer
+    add_column :games, :bot_ten, :integer
+    add_column :games, :bot_eleven, :integer
+    add_column :games, :bot_twelve, :integer
+    add_column :games, :bot_thirteen, :integer
+    add_column :games, :bot_fourteen, :integer
+    add_column :games, :bot_fifteen, :integer
+    add_column :games, :bot_sixteen, :integer
+    add_column :games, :bot_seventeen, :integer
+    add_column :games, :bot_eighteen, :integer
+  end
+end
