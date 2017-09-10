@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831143202) do
+ActiveRecord::Schema.define(version: 20170909232643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,14 +25,57 @@ ActiveRecord::Schema.define(version: 20170831143202) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.string   "date",                    null: false
-    t.string   "home",                    null: false
-    t.string   "away",                    null: false
-    t.integer  "user_id",                 null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.text     "hroster",    default: [],              array: true
-    t.text     "aroster",    default: [],              array: true
+    t.string   "date",                       null: false
+    t.string   "home",                       null: false
+    t.string   "away",                       null: false
+    t.integer  "user_id",                    null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.text     "hroster",       default: [],              array: true
+    t.text     "aroster",       default: [],              array: true
+    t.integer  "away_runs"
+    t.integer  "away_hits"
+    t.integer  "away_errors"
+    t.integer  "home_runs"
+    t.integer  "home_hits"
+    t.integer  "home_errors"
+    t.integer  "total_innings"
+    t.integer  "top_one"
+    t.integer  "top_two"
+    t.integer  "top_three"
+    t.integer  "top_four"
+    t.integer  "top_five"
+    t.integer  "top_six"
+    t.integer  "top_seven"
+    t.integer  "top_eight"
+    t.integer  "top_nine"
+    t.integer  "top_ten"
+    t.integer  "top_eleven"
+    t.integer  "top_twelve"
+    t.integer  "top_thirteen"
+    t.integer  "top_fourteen"
+    t.integer  "top_fifteen"
+    t.integer  "top_sixteen"
+    t.integer  "top_seventeen"
+    t.integer  "top_eighteen"
+    t.integer  "bot_one"
+    t.integer  "bot_two"
+    t.integer  "bot_three"
+    t.integer  "bot_four"
+    t.integer  "bot_five"
+    t.integer  "bot_six"
+    t.integer  "bot_seven"
+    t.integer  "bot_eight"
+    t.integer  "bot_nine"
+    t.integer  "bot_ten"
+    t.integer  "bot_eleven"
+    t.integer  "bot_twelve"
+    t.integer  "bot_thirteen"
+    t.integer  "bot_fourteen"
+    t.integer  "bot_fifteen"
+    t.integer  "bot_sixteen"
+    t.integer  "bot_seventeen"
+    t.integer  "bot_eighteen"
     t.index ["user_id"], name: "index_games_on_user_id", using: :btree
   end
 
